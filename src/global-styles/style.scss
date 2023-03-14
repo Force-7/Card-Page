@@ -1,0 +1,181 @@
+/// Main Styles File
+/// Here we import all the global Styles files we need for our project.
+
+@import "styles/normalize.scss";
+@import "styles/root.scss";
+@import "styles/fonts.scss";
+
+:root {
+  --medium: 620px;
+  --large: 1200px;
+}
+
+body {
+  align-items: center;
+  background-color: rgb(241, 241, 241);
+  color: var(--color-primary);
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+}
+
+p {
+  color: var(--color-on-surface);
+}
+
+.card-page {
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  height: 487px;
+  max-width: 311px;
+  padding: 1rem;
+  text-decoration: none;
+  width: 343px;
+
+  &:hover {
+    .card-page__image {
+      transform: scale(1.02);
+    }
+
+    .card-page__description-more {
+      text-decoration: underline;
+    }
+  }
+
+  @media (min-width: 608px) {
+    max-width: 577px;
+    height: 538px;
+    width: 577px;
+  }
+
+  &__image {
+    position: relative;
+
+    &-image {
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      transition: transform 1s;
+      content: url("../../public/images/img_mobile.png");
+
+
+      @media (min-width: 608px) {
+        content: url("../../public/images/img_tablet.png");
+      }
+    }
+  }
+
+
+
+  &__content{
+    display: flex;
+    flex-direction: column;
+    padding-top: 22px ;
+
+    @media (min-width: 608px) {
+      padding-top: 30px ;
+    }
+    &__header{
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+
+      &-image {
+        height: 35px;
+        width: 36px;
+
+        @media (min-width: 608px) {
+          height: 40px;
+          width: 40px;
+        }
+
+      }
+      &-name {
+        flex-grow: 3;
+        color:#000000;
+        font-size: 12px;
+        padding-left: 12px;
+        font-weight: 500;
+        @media (min-width: 608px) {
+          font-size: 14px;
+          padding-left: 11px;
+        }
+      }
+      &-time {
+        color: #7C7C7C;
+        font-size: 12px;
+        @media (min-width: 608px ) {
+          margin-right: 1px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+
+    &-title {
+      color: #000000;
+      font-size: 18px;
+      margin: 21px 0px 0px 0px ;
+      @media (min-width: 608px) {
+        font-size: 24px;
+        margin: 29px 0px 8px -1px;
+      }
+    }
+
+    &-desc {
+      margin: 8px 0px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18.2px;
+      color:#7C7C7C;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      -webkit-box-orient: vertical;
+
+      @media (min-width:608px) {
+        font-size: 16px;
+      }
+    }
+
+    &-more {
+
+      display: flex;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18.2px;
+      margin: 1px 0px 0px 0px;
+      color: #000000;
+      transition: transform 2s;
+
+
+      @media (min-width:608px) {
+        margin-top: 12px;
+        font-size: 16px;
+      }
+
+      &-image {
+        background-image: url(../../public/images/left-arrow\ 1.png);
+        width: 36px;
+        height: 52px;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding-left: 1px;
+
+        @media (min-width:608px) {
+          width: 38px;
+          height: 57px;
+        }
+      }
+    }
+  }
+}
